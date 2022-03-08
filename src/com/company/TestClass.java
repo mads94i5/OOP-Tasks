@@ -16,12 +16,15 @@ public class TestClass {
     }
     private void runDiceTest(){
         Dice dice = new Dice(6);
-        String output = "";
+        String outputString = "";
+        double total = 0;
         for (int i = 1; i <= 100; i++){
             dice.rollDice();
-            output += dice.getFaceValue() + " ";
+            outputString += dice.getFaceValue() + " ";
+            total += dice.getFaceValue();
         }
-        System.out.println(output);
+        System.out.println(outputString);
+        System.out.println("Average: " + total/100);
     }
     private void runLampTest(){
         Lamp cielingLamp = new Lamp(true);
